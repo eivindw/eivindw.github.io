@@ -1,0 +1,11 @@
+# Site settings
+title: eivindw writings
+email: eivind@kodemaker.no
+description: eivindw writes about stuff he discovers at work, mostly JVM-related.
+baseurl: "/blog"
+url: "http://eivindw.github.io"
+twitter_username: eivindw
+github_username: eivindw
+
+# Build settings
+markdown: kramdown
