@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Plugin Based Architecture"
-date:   2015-12-21 20:30:00 +0100
+date:   2015-12-20 22:37:00 +0100
 tags:
 - jvm
 - java
