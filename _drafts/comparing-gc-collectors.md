@@ -2,7 +2,10 @@
 layout: post
 title:  "Comparing GC Collectors"
 date:   2015-12-20 20:30:00 +0100
-categories: jvm gc java
+tags:
+- jvm
+- gc
+- java
 ---
 * Intro
   * GC goals (footprint, throughput, latency)
