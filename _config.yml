@@ -1,8 +1,6 @@
 # Site settings
-title: eivindw writings
-name: :kodemaker [:eivind]
+title: (:eivind kodemaker)
 km: http://www.kodemaker.no/eivind
-description: eivindw writes about stuff he discovers at work, mostly JVM-related.
 url: "http://eivindw.github.io"
 twitter_username: eivindw
 github_username: eivindw
