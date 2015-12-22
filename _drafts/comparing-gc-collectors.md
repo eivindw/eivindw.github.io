@@ -30,13 +30,19 @@ The serial collector has low CPU consumption. It runs often and seems to do a go
 
 #### Parallel Collector
 
+The parallel collector has a much higher CPU consumption than the serial collector, which is expected. It has a significant pattern in the memory usage graph, clearly showing the minor and major collection cycles.
+
 {% lightbox assets/images/001/mem-gc-default.png --data="mem_gc" --title="Parallel Collector" --img_style="max-width:90%;" %}
 
 #### Concurrent Mark Sweep (CMS) Collector
 
+The CMS collector has a much less regular pattern both in CPU usage and memory. It seems to be collecting much more memory in the minor collections than the parallel collector, but also has a few very big major collections.
+
 {% lightbox assets/images/001/mem-gc-cms.png --data="mem_gc" --title="CMS GC" --img_style="max-width:90%;" %}
 
 #### Garbage-First (G1) Collector
+
+The G1 collector has a significantly higher CPU consumption than all the other collectors. It has a very regular memory footprint, allocating max memory right after startup and keeping it at max. We can also clearly see that it runs small collection cycles constantly.
 
 {% lightbox assets/images/001/mem-gc-g1.png --data="mem_gc" --title="G1 GC" --img_style="max-width:90%;" %}
 
