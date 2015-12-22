@@ -2,6 +2,7 @@
 layout: post
 title:  "Comparing GC Collectors"
 date:   2015-12-20 20:30:00 +0100
+comments: true
 tags:
 - jvm
 - gc
