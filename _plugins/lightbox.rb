@@ -42,7 +42,7 @@ module Jekyll
       url = context.registers[:page]["url"]
       relative = "../" * (url.split("/").length-1)
       src = File.join(relative, @path == nil ? '' : @path);
-      %{<a href="#{src}" data-lightbox="#{@data}" data-title="#{@title}"><img src="#{src}" alt="#{@alt || @title}" class="#{@class}" style="#{@img_style}"/></a>}
+      %{<a href="#{src}" data-lightbox="#{@data}" data-title="#{@title}"><img src="#{src}" alt="#{@alt || @title}" class="#{@class}" style="max-width: 80%"/></a>}
     end
   end
 end
