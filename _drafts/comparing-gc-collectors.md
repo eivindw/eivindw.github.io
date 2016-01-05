@@ -8,17 +8,27 @@ tags:
 - gc
 - java
 ---
-* Intro
-  * GC goals (footprint, throughput, latency)
-  * 4 collectors (serial, parallel, cms, g1)
-* Tools/process
-  * Turn on collector + logging
-  * Java VisualVM
-  * GCViewer
-* Results
-  * Graphs
-  * Numbers
-* Conclusion
+
+Automatic memory management through advanced Garbage Collection has been one of the main selling points for Java and the JVM from the beginning. We can simply create the objects we need and the JVM makes sure they are removed when no longer in use. In this article I look at the alternative garbage collectors that are available in the JVM and try to identify the differences between them.
+
+### GC Goals
+
+* Footprint
+* Throughput
+* Latency (max pause-time)
+
+### Available Collectors
+
+* serial
+* parallel
+* cms
+* g1
+
+### Process and Tools
+
+* Turn on collector + logging
+* Java VisualVM
+* GCViewer
 
 ### Results
 
