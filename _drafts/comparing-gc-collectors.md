@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Comparing GC Collectors"
-date:   2015-12-20 20:30:00 +0100
+date:   2016-01-07 09:40:00 +0100
 comments: true
 tags:
 - jvm
@@ -9,7 +9,7 @@ tags:
 - java
 ---
 
-Automatic memory management through advanced Garbage Collection has been one of the main selling points for Java and the JVM from the beginning. We can simply create the objects we need and the JVM makes sure they are removed when no longer in use. In this article I look at the alternative garbage collectors that are available in the JVM and try to identify the differences between them.
+Automatic memory management through advanced Garbage Collection has been one of the main selling points for Java and the JVM from the beginning. We can simply create the objects we need and the JVM makes sure they are removed when no longer in use. The garbage collector can be tuned and configured in a wide variety of ways. In this article I look at the alternative garbage collectors that are available in the JVM and try to identify the differences between them.
 
 ## GC Tuning Overview
 
@@ -82,7 +82,7 @@ These numbers are calculated from the `gc.log`, using the [GCViewer](https://git
 
 These tests shows a clear difference between the alternative collectors that can be chosen on the Java HotSpot VM. It is interesting to see how they utilize CPU and memory resources to achieve their goals.
 
-These tests are really only valid for a small example application. My recommendation is to monitor GC-performance in every application trying differenct collectors over time. Choose the one that best suits your application needs.
+These tests are really only valid for a small example application. My recommendation is to monitor GC-performance in every application trying different collectors over time. Choose the one that best suits your application needs.
 
 ## References/Tools
 
