@@ -54,25 +54,17 @@ After running I used a tool called [GCViewer](https://github.com/chewiebug/GCVie
 
 ## Results
 
-### Serial Collector
-
 The serial collector has low CPU consumption. It runs often and seems to do a good job at keeping the memory footprint low. It has only committed 50% of the 2GB available heap:
 
 <a href="/assets/images/001/mem-gc-serial.png" data-lightbox="mem_gc" data-title="Serial Collector"><img src="/assets/images/001/mem-gc-serial.png"/></a>
-
-### Parallel Collector
 
 The parallel collector has a much higher CPU consumption than the serial collector, which is expected. It has a significant pattern in the memory usage graph, clearly showing the minor and major collection cycles.
 
 <a href="/assets/images/001/mem-gc-default.png" data-lightbox="mem_gc" data-title="Parallel Collector"><img src="/assets/images/001/mem-gc-default.png"/></a>
 
-### Concurrent Mark Sweep (CMS) Collector
-
 The CMS collector has a much less regular pattern both in CPU usage and memory. It seems to be collecting much more memory in the minor collections than the parallel collector, but also has a few very big major collections.
 
 <a href="/assets/images/001/mem-gc-cms.png" data-lightbox="mem_gc" data-title="Concurrent Mark Sweep (CMS) Collector"><img src="/assets/images/001/mem-gc-cms.png"/></a>
-
-### Garbage-First (G1) Collector
 
 The G1 collector has a significantly higher CPU consumption than all the other collectors. It has a very regular memory footprint, allocating max memory right after startup and keeping it at max. We can also clearly see that it runs small collection cycles constantly.
 
