@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Comparing GC Collectors"
-date:   2016-01-08 12:45:00 +0100
+date:   2016-01-08 13:14:00 +0100
 comments: true
 tags:
 - jvm
@@ -58,25 +58,25 @@ After running I used a tool called [GCViewer](https://github.com/chewiebug/GCVie
 
 The serial collector has low CPU consumption. It runs often and seems to do a good job at keeping the memory footprint low. It has only committed 50% of the 2GB available heap:
 
-{% lightbox assets/images/001/mem-gc-serial.png --data="mem_gc" --title="Serial Collector" %}
+<a href="/assets/images/001/mem-gc-serial.png" data-lightbox="mem_gc" data-title="Serial Collector"><img src="/assets/images/001/mem-gc-serial.png"/></a>
 
 ### Parallel Collector
 
 The parallel collector has a much higher CPU consumption than the serial collector, which is expected. It has a significant pattern in the memory usage graph, clearly showing the minor and major collection cycles.
 
-{% lightbox assets/images/001/mem-gc-default.png --data="mem_gc" --title="Parallel Collector" %}
+<a href="/assets/images/001/mem-gc-default.png" data-lightbox="mem_gc" data-title="Parallel Collector"><img src="/assets/images/001/mem-gc-default.png"/></a>
 
 ### Concurrent Mark Sweep (CMS) Collector
 
 The CMS collector has a much less regular pattern both in CPU usage and memory. It seems to be collecting much more memory in the minor collections than the parallel collector, but also has a few very big major collections.
 
-{% lightbox assets/images/001/mem-gc-cms.png --data="mem_gc" --title="CMS GC" %}
+<a href="/assets/images/001/mem-gc-cms.png" data-lightbox="mem_gc" data-title="Concurrent Mark Sweep (CMS) Collector"><img src="/assets/images/001/mem-gc-cms.png"/></a>
 
 ### Garbage-First (G1) Collector
 
 The G1 collector has a significantly higher CPU consumption than all the other collectors. It has a very regular memory footprint, allocating max memory right after startup and keeping it at max. We can also clearly see that it runs small collection cycles constantly.
 
-{% lightbox assets/images/001/mem-gc-g1.png --data="mem_gc" --title="G1 GC" %}
+<a href="/assets/images/001/mem-gc-g1.png" data-lightbox="mem_gc" data-title="Garbage First (G1) Collector"><img src="/assets/images/001/mem-gc-g1.png"/></a>
 
 ### Comparison by numbers
 
@@ -84,7 +84,7 @@ These are the numbers calculated from the GC logs, using the [GCViewer](https://
 
 Seems like the collectors deliver pretty close to what they promise for my little example application. The serial collector has the smallest memory footprint, but also the lowest throughput and worst (longest) average and minimum pause times. The parallel collector (gc_default.log in the table) has the second best throughput, but the worst maximum pause time. The CMS collector delivers, somewhat surprisingly, the best throughput in the test. CMS also has generally low pause times, except a few maximum pause times lasting more than a second. At last, the G1 collector has the best pause times (minimum, maximum and average), but delivers the second worst throughput in the test.
 
-{% lightbox assets/images/001/comparison.png --data="mem_gc" --title="Comparison by numbers" %}
+<a href="/assets/images/001/comparison.png" data-lightbox="mem_gc" data-title="Comparison by numbers"><img src="/assets/images/001/comparison.png"/></a>
 
 ## Conclusion
 
